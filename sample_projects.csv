@@ -1,0 +1,10 @@
+﻿Project,ExpectedReturn,Risk,Group,Dependencies
+CMS Upgrade (XM Cloud),6,5,Infrastructure,
+CMS Modules + Branding,6,5,Foundational,CMS Upgrade (XM Cloud)
+Data Infrastructure,7,6,Infrastructure,
+Provider/Location Cleanup,6,6,Foundational,Data Infrastructure
+Medical Services Pages,8,6,Tactical,CMS Upgrade (XM Cloud)
+AI Keywords,9,7,Tactical,Medical Services Pages
+Insurance Info,7,4,Tactical,
+Content Hub,8,5,Foundational,CMS Upgrade (XM Cloud)
+Clinical Trials Module,9,6,Tactical,Content Hub
