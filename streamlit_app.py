@@ -22,23 +22,30 @@ Clinical Trials Module,9,6,Tactical,Content Hub
 """
 
 # --- File upload or use sample ---
-uploaded_file = st.file_uploader("Upload a CSV file", type=["csv", "xlsx"])
+uploaded_file = st.file_uploader("Upload a CSV or Excel file", type=["csv", "xlsx"])
 
 if uploaded_file:
-    if uploaded_file.name.endswith(".csv"):
-        df = pd.read_csv(uploaded_file, encoding="utf-8", errors="ignore")
-    else:
-        df = pd.read_excel(uploaded_file)
+    try:
+        if uploaded_file.name.endswith(".csv"):
+            df = pd.read_csv(uploaded_file, encoding="utf-8-sig", errors="ignore")  # Use utf-8-sig for BOM handling
+        elif uploaded_file.name.endswith(".xlsx"):
+            df = pd.read_excel(uploaded_file)
+        else:
+            st.error("Unsupported file format. Please upload a .csv or .xlsx file.")
+            st.stop()
+
+        # Validate required columns
+        required_cols = ["Project", "ExpectedReturn", "Risk", "Group", "Dependencies"]
+        if not all(col in df.columns for col in required_cols):
+            missing_cols = [col for col in required_cols if col not in df.columns]
+            st.error(f"Missing required columns: {', '.join(missing_cols)}")
+            st.stop()
+    except Exception as e:
+        st.error(f"Error reading the file: {str(e)}. Please check the file format and try again.")
+        st.stop()
 else:
     st.info("No file uploaded, using built-in sample dataset.")
     df = pd.read_csv(io.StringIO(SAMPLE_CSV), skipinitialspace=True)
-
-# Ensure correct columns
-required_cols = ["Project", "ExpectedReturn", "Risk", "Group", "Dependencies"]
-for col in required_cols:
-    if col not in df.columns:
-        st.error(f"Missing required column: {col}")
-        st.stop()
 
 # --- Editable DataFrame ---
 st.subheader("Edit Project Data")
