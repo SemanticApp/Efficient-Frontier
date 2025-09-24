@@ -27,7 +27,7 @@ uploaded_file = st.file_uploader("Upload a CSV or Excel file", type=["csv", "xls
 if uploaded_file:
     try:
         if uploaded_file.name.endswith(".csv"):
-            df = pd.read_csv(uploaded_file, encoding="utf-8-sig", errors="ignore")  # Use utf-8-sig for BOM handling
+            df = pd.read_csv(uploaded_file, encoding="utf-8-sig")  # Use utf-8-sig for BOM handling
         elif uploaded_file.name.endswith(".xlsx"):
             df = pd.read_excel(uploaded_file)
         else:
