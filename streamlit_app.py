@@ -26,7 +26,7 @@ uploaded_file = st.file_uploader("Upload a CSV file", type=["csv", "xlsx"])
 
 if uploaded_file:
     if uploaded_file.name.endswith(".csv"):
-        df = pd.read_csv(uploaded_file)
+        df = pd.read_csv(uploaded_file, encoding="utf-8", errors="ignore")
     else:
         df = pd.read_excel(uploaded_file)
 else:
