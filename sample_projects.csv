@@ -1,10 +1,37 @@
-ï»¿Project,ExpectedReturn,Risk,Group,Dependencies
-CMS Upgrade (XM Cloud),6,5,Infrastructure,
-CMS Modules + Branding,6,5,Foundational,CMS Upgrade (XM Cloud)
-Data Infrastructure,7,6,Infrastructure,
-Provider/Location Cleanup,6,6,Foundational,Data Infrastructure
-Medical Services Pages,8,6,Tactical,CMS Upgrade (XM Cloud)
-AI Keywords,9,7,Tactical,Medical Services Pages
-Insurance Info,7,4,Tactical,
-Content Hub,8,5,Foundational,CMS Upgrade (XM Cloud)
-Clinical Trials Module,9,6,Tactical,Content Hub
+Project,Expected Return (1–10),Risk (1–10),Group,Dependencies
+UCSF Health Digital Roadmap,8,7,Infrastructure,
+Upgrade CMS platform (Sitecore XM Cloud),9,6,Foundational,
+Build out CMS platform with modules/branding,8,5,Infrastructure,
+"Review & develop data infrastructure – providers, locations, med svs",9,7,Foundational,
+Clean & validate provider data (Echo & HR),7,6,Tactical,
+Clean & validate location data (clinics & hospitals),7,6,Tactical,
+Identify & develop medical services pages + content,9,6,Tactical,
+Upgrade PDM platform (Kyruus ? Sparkle),8,7,Foundational,
+Enhance providers with clinical keywords,8,5,Tactical,
+Apply AI to evaluate clinical notes for keywords,9,8,Infrastructure,
+Assess current web content to migrate,7,5,Foundational,
+Communicate & validate site with service lines,6,4,Infrastructure,
+Develop web analytics dashboard in Tableau,7,4,Foundational,
+Launch phase 1,8,5,Tactical,
+Fine-tune & complete all medical services pages,9,5,Tactical,
+Review feedback forms & tune provider/location pages,7,4,Tactical,
+Integrate open scheduling across providers/locations,10,7,Foundational,
+"Develop Form Assembly tool (faster forms, less IT)",7,5,Tactical,
+Develop campaign landing pages (CMS + CRM/PRM/CDP),9,6,Infrastructure,
+Develop BCH subsite & hospital/cancer templates,8,5,Foundational,
+Add insurance info to provider pages,8,4,Infrastructure,
+Develop content hub for articles/stories/news,9,6,Foundational,
+Improve UX for referring provider pages + referral form,8,5,Tactical,
+Develop searchable video library with taxonomy,7,5,Tactical,
+Re-imagine Broadcast Med + webinars in CMS,7,6,Tactical,
+Build clinical trials module in CMS,9,7,Foundational,
+Add chatbot with LiveChat to call center,8,6,Tactical,
+Add symptom checker to site,9,7,Infrastructure,
+Add health risk assessments,8,6,Foundational,
+Develop online patient/consumer newsletter + subscribe,7,4,Infrastructure,
+Combine all clinical content/departments in one CMS/domain,10,8,Foundational,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
